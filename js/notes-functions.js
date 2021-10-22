@@ -1,4 +1,3 @@
-
 const settAndGetNotes = ()=>{
     
     const notesJSON =localStorage.getItem('notes')
@@ -11,3 +10,11 @@ const settAndGetNotes = ()=>{
     }
 
 }
+
+const saveNotes=()=>{
+    localStorage.setItem('notes',JSON.stringify(notes))
+}
+
+
+
+
