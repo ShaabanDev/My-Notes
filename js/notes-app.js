@@ -3,7 +3,8 @@
 let notes = settAndGetNotes()
 let filterText = {
     'searchText':'',
-}
+    'sortType':''
+} 
 
 renderNotes(notes,filterText)
 
@@ -16,11 +17,24 @@ document.querySelector('#search-input').addEventListener('input',(e)=>{
 
 document.querySelector('#add-notes').addEventListener('click',(e)=>{
     const id = uuidv4()
+    const timestamp = moment().valueOf()
     notes.push({
         'id':id,
         'title':'',
         'body':'',
+        'createdAt':timestamp,
+        'editedAt':timestamp
     })
     saveNotes()
-    location.assign('edite-note.html')
+    location.assign(`edite-note.html#${id}`)
+})
+
+document.querySelector('#filter-by').addEventListener('change',(e)=>{
+    filterText.sortType=e.target.value
+    renderNotes(notes,filterText)
+})
+
+document.querySelector('#filter-by').addEventListener('change',(e)=>{
+    notes=  sortNotes(notes,filterText)
+    renderNotes(notes,filterText)
 })

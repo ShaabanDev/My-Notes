@@ -11,7 +11,11 @@
    <h3>Just Do Your Notes And Don't Forget It !</h3>
    <div id="search-div">
     <input id="search-input" name="search-text" type="text">
-    <label for="search-input">Search</label>
+    <select  id="filter-by">
+      <option value="byEdited">Sort by last edited</option>
+      <option value="byCreated" selected >Sort by recently created</option>
+      <option value="alphabetical">Sort alphabetically</option>
+    </select>
    </div>
    <div id="notes"></div>
    <br>
@@ -20,6 +24,12 @@
        <button id="add-notes">Add Note</button>
        <a href="edite-note.html">go to add</a>
    </div>
+   <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"
+      integrity="sha512-LGXaggshOkD/at6PFNcp2V2unf9LzFq6LE+sChH7ceMTDP0g2kn6Vxwgg7wkPP7AAtX+lmPqPdxB47A0Nz0cMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
    <script src="js/uuid.js"></script>
    <script src="js/notes-functions.js"></script>
    <script src="js/notes-app.js"></script>
