@@ -80,3 +80,6 @@ const sortNotes = (notes, filterText) => {
     return notes;
   }
 };
+
+const generateTimeAgo = (editedAt) =>
+  `Last Edited ${moment(editedAt).fromNow()}`;

@@ -1,5 +1,4 @@
 
-
 let notes = settAndGetNotes()
 let filterText = {
     'searchText':'',
